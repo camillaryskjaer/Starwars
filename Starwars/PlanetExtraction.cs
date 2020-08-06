@@ -43,7 +43,8 @@ namespace Starwars
         {
             IEnumerable<Planet> selectedPlanets = 
                 from p in planets 
-                where p.Name.ToLower()[1] == 'a' && p.Name.ToLower().EndsWith("e") 
+                //for læsevenlighedens skyld m.m. er det altid bedst at indkapsle betingelser i ()
+                where ((p.Name.ToLower()[1] == 'a') && (p.Name.ToLower().EndsWith("e"))) 
                 select p;
 
             return selectedPlanets;
